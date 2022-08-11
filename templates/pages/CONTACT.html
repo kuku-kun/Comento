@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CONTACT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Business Frontpage - Start Bootstrap Template</title>
+    <script src="/thirdproject/jquery-3.1.1.min.js"></script>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBPBUi5XxNjWwCqOEoFKsO_X_GBe5idek&callback=myMap"></script>
+</head>
+<body>
+<!-- Responsive navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container px-5">
+            <div class="">
+                <a class="navbar-brand" href="/MAIN/">BEAUTY LIFE</a>
+            </div>
+            <div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <!--    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>-->
+                    <li class="nav-item"><a class="nav-link" href="/ABOUTUS/">ABOUT US</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/GOODS/">GOODS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/EVENT/">EVENT</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/QUESTION/">QUESTION</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/CONTACT/">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<!-- Contact section-->
+    <section class="bg-light py-5">
+        <div class="container px-5 my-5 px-5">
+            <div class="text-center mb-5">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
+                <h2 class="fw-bolder">Look at My Shop!</h2>
+                <p class="lead mb-0">Find items on the spot that will satisfy you!</p>
+            </div>
+            <div class="row gx-5 justify-content-center" id="contact">
+
+            </div>
+        </div>
+    </section>
+ <!-- Footer-->
+    <footer class="py-5 bg-dark">
+        <div class="container px-5"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
+    </footer>
+    <script type="text/javascript">
+        function success(position){
+            $("#contact").text("내 위치 위도 = " + position.coords.latitude
+			+" 내 위치 경도 = " + position.coords.longitude);
+        }
+
+        function error(err){
+            $("#contact").text("조회 실패 ==>" + err.code);
+        }
+
+        function initMap(){
+            const map = new google.maps.Map(document.getElementById("map"),
+                {
+                    mapTypeId: google.maps.MapTypeId.HYBRID,
+                    center: {lat:position.coords.latitude, lng:position.coords.longitude}
+                    zoom: 15
+            })
+        }
+
+        $(document).ready(function(){
+            $("#contact").ready(function(){
+                window.navigator.geolocation.getCurrentPosition(success, error);//()를 붙여 자동호출하는것 x
+            })
+        })
+
+    </script>
+
+</body>
+</html>

@@ -22,4 +22,11 @@ from . import views
 urlpatterns = [
     path('', views.mainpage),
     path('company/',views.company),
+    path('MAIN/',views.MAIN),
+    path('ABOUTUS/',views.ABOUTUS),
+    path('GOODS/',views.GOODS),
+    path('EVENT/',views.EVENT),
+    path('QUESTION/',views.QUESTION),
+    path('CONTACT/',views.CONTACT),
+    path('EVENT_GET/',views.EVENT_P),
 ]
