@@ -16,14 +16,11 @@ def ABOUTUS(request):
 def GOODS(request):
     return render(request, 'pages/GOODS.html')
 
-def EVENT(request):
-    return render(request, 'pages/EVENT.html')
+def REVIEW(request):
+    return render(request, 'pages/REVIEW.html')
 
 def CONTACT(request):
     return render(request, 'pages/CONTACT.html')
 
 def QUESTION(request):
     return render(request, 'pages/QUESTION.html')
-
-def EVENT_P(request):
-    return render(request, 'pages/EVENT_GET.html')
