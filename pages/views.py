@@ -13,8 +13,8 @@ def MAIN(request):
 def ABOUTUS(request):
     return render(request, 'pages/ABOUTUS.html')
 
-def GOODS(request):
-    return render(request, 'pages/GOODS.html')
+def SERVICE(request):
+    return render(request, 'pages/SERVICE.html')
 
 def REVIEW(request):
     return render(request, 'pages/REVIEW.html')
@@ -24,3 +24,12 @@ def CONTACT(request):
 
 def QUESTION(request):
     return render(request, 'pages/QUESTION.html')
+
+def GOODS(request):
+    return render(request, 'pages/GOODS.html')
+
+def LOGIN(request):
+    return render(request, 'pages/LOGIN.html')
+
+def NEWBE(request):
+    return render(request, 'pages/NEWBE.html')
